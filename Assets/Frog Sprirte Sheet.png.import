@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Frog Sprirte Sheet.png-d313e11a3a5a86b068cd1b738fe7f26c.stex"
+path="res://.import/Frog Sprirte Sheet.png-fcdd83d5caae469e76faca4595e88d18.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Frog Sprirte Sheet.png"
-dest_files=[ "res://.import/Frog Sprirte Sheet.png-d313e11a3a5a86b068cd1b738fe7f26c.stex" ]
+source_file="res://Assets/Frog Sprirte Sheet.png"
+dest_files=[ "res://.import/Frog Sprirte Sheet.png-fcdd83d5caae469e76faca4595e88d18.stex" ]
 
 [params]
 
