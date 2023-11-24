@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+
+signal life_changed(player_hearts)
+
 const MOVE_SPEED = 500
 const JUMP_FORCE = 1000
 const GRAVITY = 55
@@ -10,6 +13,8 @@ const FIREBALL = preload("res://Scenes/Fireball.tscn")
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
+
+var delay = 1
 var yvelo = 0
 var facing_right = false
 

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Heart1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Heart2.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.305882, 0.490196, 0.364706, 0.462745 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 2
 
 [node name="World" type="Node2D"]
 
@@ -20,3 +30,33 @@ current = true
 zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
 smoothing_speed = 6.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 173.0
+margin_bottom = 93.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="HeartsFull" type="TextureRect" parent="HUD"]
+margin_left = 20.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 52.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+
+[node name="HeartsEmpty" type="TextureRect" parent="HUD"]
+margin_left = 20.0
+margin_top = 35.0
+margin_right = 68.0
+margin_bottom = 51.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 2
