@@ -5,7 +5,7 @@ const JUMP_FORCE = 500
 const GRAVITY = 25
 const MAX_FALL_SPEED = 500
 
-const FIREBALL = preload("res://Fireball.tscn")
+const FIREBALL = preload("res://Scenes/Fireball.tscn")
 
 onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
@@ -21,10 +21,18 @@ func _physics_process(delta):
 			$Position2D.position.x *= -1
 	if Input.is_action_pressed("ui_left"):
 		move_dir -= 1
-		if sign(Position2D.position.x) == 1:
+		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
 	move_and_slide(Vector2(move_dir * MOVE_SPEED, yvelo), Vector2(0,-1))
 	
+	if Input.is_action_just_pressed("ui_attack"):
+		var fireball = FIREBALL.instance()
+		if sign($Position2D.position.x) == 1:
+			fireball.set_fireball_direction(1)
+		else:
+			fireball.set_fireball_direction(-1)
+		get_parent().add_child(fireball)
+		fireball.position = $Position2D.global_position
 	
 	var grounded = is_on_floor()
 	yvelo += GRAVITY
@@ -48,10 +56,6 @@ func _physics_process(delta):
 	else:
 		play_anim("jump")
 	
-	if Input.is_action_just_pressed("ui_focus_next"):
-		var fireball = FIREBALL.instance()
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
 
 func flip():
 	facing_right = !facing_right
