@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/boss damage.mp3-bf4837b4663fc95b42ef2b8e28209bfb.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/boss damage.mp3"
+dest_files=[ "res://.import/boss damage.mp3-bf4837b4663fc95b42ef2b8e28209bfb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
