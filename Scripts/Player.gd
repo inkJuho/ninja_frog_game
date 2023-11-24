@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 250
-const JUMP_FORCE = 500
-const GRAVITY = 25
-const MAX_FALL_SPEED = 500
+const MOVE_SPEED = 500
+const JUMP_FORCE = 1000
+const GRAVITY = 55
+const MAX_FALL_SPEED = 964
 
 const FIREBALL = preload("res://Scenes/Fireball.tscn")
 
