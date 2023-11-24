@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/In the Clouds.mp3-9fe774d55ea3e0970daaa21539c75676.mp3str"
+
+[deps]
+
+source_file="res://Music/In the Clouds.mp3"
+dest_files=[ "res://.import/In the Clouds.mp3-9fe774d55ea3e0970daaa21539c75676.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
