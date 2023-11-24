@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Finished.gd" type="Script" id=1]
+
+[node name="Finished" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 387.0
+margin_top = 358.0
+margin_right = 888.0
+margin_bottom = 389.0
+rect_scale = Vector2( 4, 4 )
+text = "YOU SURVIVED! The game is over. 
+Press the \"Exit\" button to close the window."
+
+[node name="Button" type="Button" parent="."]
+margin_left = 868.0
+margin_top = 951.0
+margin_right = 903.0
+margin_bottom = 971.0
+rect_scale = Vector2( 3, 3 )
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

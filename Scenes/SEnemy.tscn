@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/SEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Bird Enemy3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Bird Enemy2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Bird Enemy1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Bird Enemy4.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.5, 14 )
+
+[node name="SEnemy" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 2 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 6.5, 3.5 )
+enabled = true
+cast_to = Vector2( 0, 20.5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

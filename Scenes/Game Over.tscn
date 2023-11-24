@@ -19,4 +19,15 @@ rect_min_size = Vector2( 1, 1 )
 rect_scale = Vector2( 4, 4 )
 text = "Restart"
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 837.0
+margin_top = 914.0
+margin_right = 894.0
+margin_bottom = 953.0
+rect_min_size = Vector2( 1, 1 )
+rect_scale = Vector2( 4, 4 )
+text = "Exit"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button_pressed"]
