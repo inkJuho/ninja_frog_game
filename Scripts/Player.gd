@@ -99,3 +99,7 @@ func _on_Timer_timeout():
 
 func _on_HUD_ready():
 	dead()
+
+
+func _on_BossTrigger_PlayerEntered():
+	pass # Replace with function body.
