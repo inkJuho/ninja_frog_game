@@ -1,6 +1,7 @@
 extends Area2D
 
 
+signal isClosed
 func _ready():
 	pass
 
