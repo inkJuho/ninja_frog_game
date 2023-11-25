@@ -23,6 +23,17 @@ func dead():
 		$CollisionShape2D.call_deferred("set_disabled", true)
 		$Timer.start()
 
+func ouch(var enemyposx):
+	Global.lose_life()
+	
+	if position.x < enemyposx:
+		velocity.x = -800
+	elif position.x > enemyposx:
+		velocity.x = 800
+		
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
+
 
 func _physics_process(delta):
 	if is_dead == false:
@@ -41,8 +52,15 @@ func _physics_process(delta):
 	
 	if is_on_wall():
 		direction = direction * -1
+		
+	if get_slide_count() > 0:
+		for i in range (get_slide_count()):
+			if "Player" in get_slide_collision(i).collider.name:
+				get_slide_collision(i).collider.dead()
 
 
 
 func _on_Timer_timeout():
 	queue_free()
+
+

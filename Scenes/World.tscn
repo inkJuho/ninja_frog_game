@@ -35,15 +35,40 @@ tile_data = PoolIntArray( 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0,
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 246, 147 )
 scale = Vector2( 2, 2 )
+Hp = 25
+
+[node name="Panel" type="Panel" parent="Player"]
+margin_left = -273.0
+margin_top = -149.0
+margin_right = -169.0
+margin_bottom = -88.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Counter" type="Label" parent="Player"]
+margin_left = -219.0
+margin_top = -132.0
+margin_right = -198.0
+margin_bottom = -118.0
+rect_scale = Vector2( 2, 2 )
+text = "##"
+
+[node name="Label" type="Label" parent="Player"]
+margin_left = -269.0
+margin_top = -134.0
+margin_right = -231.0
+margin_bottom = -118.0
+rect_scale = Vector2( 2, 2 )
+text = "HP:"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 1 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
-smoothing_speed = 6.0
+smoothing_speed = 100.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="HUD"]
@@ -53,7 +78,24 @@ margin_right = 173.0
 margin_bottom = 93.0
 custom_styles/panel = SubResource( 1 )
 
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 26.0
+margin_top = 51.0
+margin_right = 44.0
+margin_bottom = 65.0
+rect_scale = Vector2( 2, 2 )
+text = "HP:"
+
+[node name="Counter" type="Label" parent="HUD"]
+margin_left = 73.0
+margin_top = 49.0
+margin_right = 113.0
+margin_bottom = 63.0
+rect_scale = Vector2( 2, 2 )
+text = "##"
+
 [node name="HeartsFull" type="TextureRect" parent="HUD"]
+visible = false
 margin_left = 20.0
 margin_top = 36.0
 margin_right = 68.0
@@ -64,6 +106,7 @@ expand = true
 stretch_mode = 2
 
 [node name="HeartsEmpty" type="TextureRect" parent="HUD"]
+visible = false
 margin_left = 20.0
 margin_top = 35.0
 margin_right = 68.0
@@ -235,4 +278,5 @@ script = ExtResource( 9 )
 position = Vector2( 2708, 7446 )
 shape = SubResource( 4 )
 
+[connection signal="ready" from="HUD" to="Player" method="_on_HUD_ready"]
 [connection signal="PlayerEntered" from="BossTrigger" to="BossDoor" method="_on_BossTrigger_PlayerEntered"]
