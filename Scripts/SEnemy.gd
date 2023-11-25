@@ -7,17 +7,23 @@ const FLOOR = Vector2(0, -1)
 var velocity = Vector2()
 var direction = 1
 
+export(int) var hp = 1
+
 var is_dead = false
 
 func _ready():
 	pass
 
 func dead():
-	is_dead = true
-	velocity = Vector2(0,0)
-	$AnimatedSprite.play("dead")
-	$CollisionShape2D.call_deferred("set_disabled", true)
-	$Timer.start()
+	hp = hp - 1
+	$EnemyDamage.play()
+	if hp <= 0:
+		is_dead = true
+		$EnemyHit.play()
+		velocity = Vector2(0,0)
+		$AnimatedSprite.play("dead")
+		$CollisionShape2D.call_deferred("set_disabled", true)
+		$Timer.start()
 
 
 func _physics_process(delta):

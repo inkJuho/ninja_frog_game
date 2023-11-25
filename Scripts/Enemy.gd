@@ -16,8 +16,10 @@ func _ready():
 
 func dead():
 	hp = hp - 1
+	$EnemyDamage.play()
 	if hp <= 0:
 		is_dead = true
+		$EnemyHit.play()
 		velocity = Vector2(0,0)
 		$AnimatedSprite.play("dead")
 		$CollisionShape2D.call_deferred("set_disabled", true)
