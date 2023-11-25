@@ -20,9 +20,9 @@ rect_scale = Vector2( 4, 4 )
 text = "Restart"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 834.0
+margin_left = 826.0
 margin_top = 715.0
-margin_right = 891.0
+margin_right = 883.0
 margin_bottom = 754.0
 rect_min_size = Vector2( 1, 1 )
 rect_scale = Vector2( 4, 4 )
