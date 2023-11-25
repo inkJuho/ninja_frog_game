@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Door.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Door.gd" type="Script" id=2]
+[ext_resource path="res://Music/boss_song_NEW.wav.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 33 )
@@ -136,3 +137,7 @@ anims/RESET = SubResource( 2 )
 anims/active = SubResource( 3 )
 anims/closed = SubResource( 4 )
 anims/idle = SubResource( 5 )
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -27.966

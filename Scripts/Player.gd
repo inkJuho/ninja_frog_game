@@ -36,6 +36,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("ui_attack"):
 			var fireball = FIREBALL.instance()
+			$Fireball.play()
 			if sign($Position2D.position.x) == 1:
 				fireball.set_fireball_direction(1)
 			else:
@@ -72,6 +73,7 @@ func _physics_process(delta):
 
 func dead():
 	Hp = Hp - 1
+	$PlayerTakeDamage.play()
 	_ready()
 	if Hp <= 0:
 		is_dead = true

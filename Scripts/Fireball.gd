@@ -24,8 +24,10 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Fireball_body_entered(body):
 	if "Enemy" in body.name:
+		$EnemyHit.play()
 		body.dead()
 	elif "Boss" in body.name:
+		$BossHit.play()
 		body.dead()
 	#elif "Player" in body.name:
 		#body.dead()
