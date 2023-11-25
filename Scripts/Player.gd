@@ -91,7 +91,12 @@ func play_anim(anim_name):
 		return
 	anim_player.play(anim_name)
 	
+	
+func _ready():
+	$Counter.text = String(Hp)
 
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Scenes/Game Over.tscn")
 
 
 func _on_HUD_ready():
@@ -100,3 +105,5 @@ func _on_HUD_ready():
 
 func _on_BossTrigger_PlayerEntered():
 	pass # Replace with function body.
+
+
