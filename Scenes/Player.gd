@@ -92,8 +92,7 @@ func play_anim(anim_name):
 	anim_player.play(anim_name)
 	
 	
-func _ready():
-	$Counter.text = String(Hp)
+
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://Scenes/Game Over.tscn")
