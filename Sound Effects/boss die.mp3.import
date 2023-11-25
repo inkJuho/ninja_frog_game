@@ -11,5 +11,5 @@ dest_files=[ "res://.import/boss die.mp3-6b2d589a7bd3115890ac0ed8ad36e041.mp3str
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
