@@ -27,6 +27,6 @@ func _on_Fireball_body_entered(body):
 		body.dead()
 	elif "Boss" in body.name:
 		body.dead()
-	elif "Player" in body.name:
-		body.dead()
+	#elif "Player" in body.name:
+		#body.dead()
 	queue_free()
